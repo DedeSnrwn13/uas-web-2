@@ -51,9 +51,4 @@ class User extends Authenticatable
     {
         return $this->hasMany(Resident::class);
     }
-
-    public function logs(): HasMany
-    {
-        return $this->hasMany(Log::class);
-    }
 }

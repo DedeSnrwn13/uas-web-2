@@ -13,7 +13,8 @@ class FamilyMember extends Model
     protected $fillable = [
         'family_id',
         'resident_id',
-        'relationship'
+        'relationship',
+        'occupation'
     ];
 
     public function family(): BelongsTo

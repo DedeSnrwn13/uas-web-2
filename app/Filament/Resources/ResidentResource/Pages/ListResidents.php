@@ -10,6 +10,8 @@ class ListResidents extends ListRecords
 {
     protected static string $resource = ResidentResource::class;
 
+    protected ?string $heading = 'Daftar Penduduk';
+
     protected function getHeaderActions(): array
     {
         return [

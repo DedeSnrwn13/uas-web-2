@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('resident_id')->constrained('residents')->onDelete('cascade');
             $table->string('health_issue');
             $table->text('health_description');
-            $table->timestamp('recorded_at');
+            $table->dateTime('recorded_at');
             $table->timestamps();
         });
     }

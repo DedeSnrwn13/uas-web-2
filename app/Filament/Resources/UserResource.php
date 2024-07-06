@@ -14,6 +14,7 @@ use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\UserResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\UserResource\RelationManagers;
+use Filament\Forms\Components\Section;
 
 class UserResource extends Resource
 {
@@ -25,25 +26,39 @@ class UserResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('name')
-                    ->label('Nama')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('email')
-                    ->email()
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('password')
-                    ->password()
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\Select::make('role')
-                    ->label('Peran')
-                    ->options([
-                        'admin' => 'Admin',
-                        'petugas' => 'Petugas',
+                Section::make()
+                    ->schema([
+                        Forms\Components\TextInput::make('name')
+                            ->label('Nama')
+                            ->placeholder('Input nama')
+                            ->required()
+                            ->maxLength(255),
+                        Forms\Components\TextInput::make('email')
+                            ->placeholder('Input email')
+                            ->email()
+                            ->unique(
+                                User::class,
+                                'email',
+                                ignoreRecord: true,
+                            )
+                            ->required()
+                            ->maxLength(255),
+                        Forms\Components\TextInput::make('password')
+                            ->label('Input password')
+                            ->password()
+                            ->required()
+                            ->maxLength(255),
+                        Forms\Components\Select::make('role')
+                            ->label('Peran')
+                            ->placeholder('Pilih peran')
+                            ->label('Peran')
+                            ->options([
+                                'admin' => 'Admin',
+                                'petugas' => 'Petugas',
+                            ])
+                            ->required(),
                     ])
-                    ->required(),
+                    ->columns(2)
             ]);
     }
 
@@ -64,16 +79,26 @@ class UserResource extends Resource
                         }
                     ),
                 Tables\Columns\TextColumn::make('name')
-                    ->label('Nama'),
-                Tables\Columns\TextColumn::make('email'),
+                    ->label('Nama')
+                    ->searchable()
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('email')
+                    ->searchable()
+                    ->sortable(),
                 Tables\Columns\TextColumn::make('role')
+                    ->label('Peran')
                     ->default('-')
-                    ->label('Peran'),
+                    ->searchable()
+                    ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->label('Dibuat pada')
+                    ->searchable()
+                    ->sortable()
                     ->dateTime(),
                 Tables\Columns\TextColumn::make('updated_at')
-                    ->label('Dibuat pada')
+                    ->label('Diupdate pada')
+                    ->searchable()
+                    ->sortable()
                     ->dateTime(),
             ])
             ->filters([

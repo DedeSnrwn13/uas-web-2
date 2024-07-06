@@ -10,6 +10,8 @@ class ListAdministrativeRecords extends ListRecords
 {
     protected static string $resource = AdministrativeRecordResource::class;
 
+    protected ?string $heading = 'Daftar Catatan Administratif';
+
     protected function getHeaderActions(): array
     {
         return [

@@ -20,6 +20,9 @@ return new class extends Migration
             $table->string('birthplace');
             $table->string('address');
             $table->string('phone');
+            $table->string('age_category')->nullable();
+            $table->enum('life_status', ['hidup', 'meninggal']);
+            $table->date('date_of_death')->nullable();
             $table->timestamps();
         });
     }

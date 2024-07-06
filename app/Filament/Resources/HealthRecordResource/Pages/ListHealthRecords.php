@@ -10,6 +10,8 @@ class ListHealthRecords extends ListRecords
 {
     protected static string $resource = HealthRecordResource::class;
 
+    protected ?string $heading = 'Daftar Catatan Kesehatan';
+
     protected function getHeaderActions(): array
     {
         return [

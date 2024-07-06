@@ -10,6 +10,8 @@ class ListFamilyMembers extends ListRecords
 {
     protected static string $resource = FamilyMemberResource::class;
 
+    protected ?string $heading = 'Daftar Anggota Keluarga';
+
     protected function getHeaderActions(): array
     {
         return [
