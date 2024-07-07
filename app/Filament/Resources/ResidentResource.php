@@ -13,8 +13,10 @@ use PhpParser\Node\Stmt\Label;
 use Filament\Resources\Resource;
 use Filament\Forms\Components\Section;
 use Filament\Tables\Contracts\HasTable;
+use Filament\Tables\Actions\ExportAction;
 use Filament\Tables\Filters\SelectFilter;
 use Illuminate\Database\Eloquent\Builder;
+use App\Filament\Exports\ResidentExporter;
 use App\Filament\Resources\ResidentResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\ResidentResource\RelationManagers;
@@ -171,6 +173,10 @@ class ResidentResource extends Resource
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
+            ])
+            ->headerActions([
+                ExportAction::make()
+                    ->exporter(ResidentExporter::class)
             ]);
     }
 
