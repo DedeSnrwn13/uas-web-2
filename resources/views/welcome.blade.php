@@ -53,42 +53,42 @@
             <div class="flex flex-wrap -m-4">
                 <div class="xl:w-1/3 md:w-1/2 p-4">
                     <div class="border border-gray-300 p-6 rounded-lg">
-                        <h1 class="text-indigo-500 font-bold text-2xl mb-4">10000</h1>
+                        <h1 class="text-indigo-500 font-bold text-2xl mb-4">{{ number_format($totalPenduduk) }}</h1>
                         <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Total Penduduk</h2>
                         <p class="leading-relaxed text-base">Jumlah keseluruhan penduduk</p>
                     </div>
                 </div>
                 <div class="xl:w-1/3 md:w-1/2 p-4">
                     <div class="border border-gray-300 p-6 rounded-lg">
-                        <h1 class="text-indigo-500 font-bold text-2xl mb-4">10000</h1>
+                        <h1 class="text-indigo-500 font-bold text-2xl mb-4">{{ number_format($totalBalita) }}</h1>
                         <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Total Penduduk Balita</h2>
                         <p class="leading-relaxed text-base">Penduduk dengan kategori Balita</p>
                     </div>
                 </div>
                 <div class="xl:w-1/3 md:w-1/2 p-4">
                     <div class="border border-gray-300 p-6 rounded-lg">
-                        <h1 class="text-indigo-500 font-bold text-2xl mb-4">10000</h1>
+                        <h1 class="text-indigo-500 font-bold text-2xl mb-4">{{ number_format($totalAnakAnak) }}</h1>
                         <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Total Penduduk Anak-anak</h2>
                         <p class="leading-relaxed text-base">Penduduk dengan kategori Anak-anak</p>
                     </div>
                 </div>
                 <div class="xl:w-1/3 md:w-1/2 p-4">
                     <div class="border border-gray-300 p-6 rounded-lg">
-                        <h1 class="text-indigo-500 font-bold text-2xl mb-4">10000</h1>
+                        <h1 class="text-indigo-500 font-bold text-2xl mb-4">{{ number_format($totalRemaja) }}</h1>
                         <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Total Penduduk Remaja</h2>
                         <p class="leading-relaxed text-base">Penduduk dengan kategori Remaja</p>
                     </div>
                 </div>
                 <div class="xl:w-1/3 md:w-1/2 p-4">
                     <div class="border border-gray-300 p-6 rounded-lg">
-                        <h1 class="text-indigo-500 font-bold text-2xl mb-4">10000</h1>
+                        <h1 class="text-indigo-500 font-bold text-2xl mb-4">{{ number_format($totalDewasa) }}</h1>
                         <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Total Penduduk Dewasa</h2>
                         <p class="leading-relaxed text-base">Penduduk dengan kategori Dewasa</p>
                     </div>
                 </div>
                 <div class="xl:w-1/3 md:w-1/2 p-4">
                     <div class="border border-gray-300 p-6 rounded-lg">
-                        <h1 class="text-indigo-500 font-bold text-2xl mb-4">10000</h1>
+                        <h1 class="text-indigo-500 font-bold text-2xl mb-4">{{ number_format($totalLansia) }}</h1>
                         <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Total Penduduk Lansia</h2>
                         <p class="leading-relaxed text-base">Penduduk dengan kategori Lansia</p>
                     </div>
