@@ -17,3 +17,4 @@
 13.	Buka `http://127.0.0.1:8000/` untuk melihat homepage
 15.	Kemudian akses login dari url `http://127.0.0.1:8000/admin/login`
 16.	Jika belum ada admin, maka bisa membuat user baru dengan menjalankan perintah `php artisan make:filament-user`
+17.	Jalankan `php artisan queue:work` terlebih dahulu jika ingin mengeksport data, tunggu hingga selesai dan nanti akan ada pemberitahuan di menu notifikasi, jika proses export sudah selesai tetapi tidak ada notifikasi, bisa di refresh
